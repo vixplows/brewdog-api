@@ -15,6 +15,7 @@ var requestComplete = function () {
  // need to then populate beer list??
 }
 
+// make this a resuable loopThrough?
 var createNameArray = function(beers){
   var beerNames = [];
   beers.forEach(function(beer) {
@@ -23,11 +24,14 @@ var createNameArray = function(beers){
   displayBeerList(beerNames);
 }
 
+// make this a resuable displayList?
 var displayBeerList = function(array) {
-  var ul = document.querySelector
-  // function that gets all the beer names in the beer list and displays
-  // create elements
-
+  var ul = document.querySelector('#beer-list');
+  array.forEach(function(name) {
+    var li = document.createElement('li');
+    li.innerText = name;
+    ul.appendChild(li);
+  });
 }
 
 var app = function () {
